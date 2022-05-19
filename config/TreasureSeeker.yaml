@@ -1,0 +1,379 @@
+default_settings: null
+behaviors:
+  SeekTreasure:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 512
+      buffer_size: 5120                             #Typically a larger buffer_size corresponds to more stable training updates.
+      learning_rate: 0.0001
+      beta: 0.15
+      epsilon: 0.2
+      lambd: 0.9
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false                                                                      #Normalization can be helpful in cases with complex continuous control problems, but may be harmful with simpler discrete control problems.
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+      memory: #recurrent neural network activated
+        memory_size: 128
+        sequence_length: 64
+      goal_conditioning_type: hyper                                                          #Note that when using hyper the number of parameters of the network increases greatly. Therefore, it is recommended to reduce the number of hidden_units when using this conditioning_type
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+      curiosity:
+        gamma: 0.99 
+        strength: 0.25
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+        learning_rate: 0.0003
+    init_path: null
+    keep_checkpoints: 5 # stores up to the 5 latest models
+    checkpoint_interval: 500000 #every 500k steps a model at that point will be produced
+    max_steps: 7000000 #5mil max steps
+    time_horizon: 64
+    summary_freq: 50000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: null
+  env_args: null
+  base_port: 5005
+  num_envs: 1
+  seed: -1
+engine_settings:
+
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: false
+
+environment_parameters:            
+    zombiesspeed:
+        curriculum:
+          - name: lesson 1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 1.0
+              
+              
+          - name: lesson 2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6  
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 1.0
+               max_value: 2.0
+              
+              
+          - name: lesson 3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 2.0
+               max_value: 3.0
+              
+              
+          - name: lesson 4
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 3.0
+               max_value: 4.0 
+               
+               
+    zombieschasingtime:
+        curriculum:
+          - name: lesson 1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 150.0
+              
+              
+          - name: lesson 2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6  
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 150.0
+               max_value: 200.0
+              
+              
+          - name: lesson 3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 200.0
+               max_value: 250.0
+              
+              
+          - name: lesson 4
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 250.0
+               max_value: 300.0 
+               
+               
+
+   
+    zombieswanderingtime:
+        curriculum:
+          - name: lesson1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 150.0
+              
+              
+          - name: lesson2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6 
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 150.0
+               max_value: 200.0
+              
+              
+          - name: lesson3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 200.0
+               max_value: 250.0
+              
+              
+          - name: lesson4
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 250.0
+               max_value: 300.0
+               
+               
+    zombiescount:
+        curriculum:
+          - name: lesson 1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 2.0
+              
+              
+          - name: lesson 2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6  
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 2.0
+               max_value: 3.0
+              
+              
+          - name: lesson 3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 3.0
+               max_value: 4.0
+              
+              
+          - name: lesson 4
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 4.0
+               max_value: 5.0      
+ 
+
+    mazeactivewalls:
+        curriculum:
+          - name: lesson 1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+                value: 10.0
+              
+              
+              
+              
+          - name: lesson 2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6  
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 15.0
+              
+              
+              
+          - name: lesson 3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 20.0
+              
+              
+          - name: lesson 4
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 28.0
+              
+              
+              
+    agentbulletmagsize:
+        curriculum:
+          - name: lesson 1
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 5
+            value:
+             sampler_type: constant
+             sampler_parameters:
+              value: 100.0
+              
+              
+          - name: lesson 2
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 6 
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 75.0
+               max_value: 100.0
+              
+              
+          - name: lesson 3
+            completion_criteria:
+             measure: reward
+             behavior: SeekTreasure
+             signal_smoothing: true
+             min_lesson_length: 200
+             threshold: 7
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 50.0
+               max_value: 75.0
+              
+              
+          - name: lesson 4
+            value:
+             sampler_type: uniform
+             sampler_parameters:
+               min_value: 25.0
+               max_value: 50.0
+                             
+               

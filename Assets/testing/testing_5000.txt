@@ -1,0 +1,300 @@
+Eps: 100
+
+Passes: 13
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.885057
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.913
+
+min: -0.566
+
+avg: 5.235949
+
+======================================================
+
+Eps: 200
+
+Passes: 32
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.601191
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.914001
+
+min: -0.566
+
+avg: 5.146673
+
+======================================================
+
+Eps: 300
+
+Passes: 46
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.69685
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.914001
+
+min: -0.566
+
+avg: 5.192046
+
+======================================================
+
+Eps: 400
+
+Passes: 63
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.673591
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.195723
+
+======================================================
+
+Eps: 500
+
+Passes: 72
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.628505
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.076532
+
+======================================================
+
+Eps: 600
+
+Passes: 86
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.675097
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.120435
+
+======================================================
+
+Eps: 700
+
+Passes: 101
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.661102
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.117445
+
+======================================================
+
+Eps: 800
+
+Passes: 116
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.646199
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.112566
+
+======================================================
+
+Eps: 900
+
+Passes: 129
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.640727
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.098929
+
+======================================================
+
+Eps: 1000
+
+Passes: 144
+
+missed shots(passes): 
+
+max: 5
+
+min: 5
+
+avg: 5
+
+scores(failures): 
+
+max: 9
+
+min: 0
+
+avg: 4.63201
+
+Cumulative Reward(Pass & Fail): 
+
+max: 9.917
+
+min: -0.566
+
+avg: 5.093273
+
+======================================================
+

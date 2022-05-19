@@ -1,0 +1,59 @@
+{
+    "zombiescount": {
+        "lesson_num": 3
+    },
+    "SeekTreasure": {
+        "checkpoints": [
+            {
+                "steps": 499942,
+                "file_path": "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-499942.onnx",
+                "reward": 2.8536366007544776,
+                "creation_time": 1649255972.339915,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-499942.pt"
+                ]
+            },
+            {
+                "steps": 999966,
+                "file_path": "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-999966.onnx",
+                "reward": 7.704000352881849,
+                "creation_time": 1649256637.5203044,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-999966.pt"
+                ]
+            },
+            {
+                "steps": 1499962,
+                "file_path": "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-1499962.onnx",
+                "reward": 8.720833736898689,
+                "creation_time": 1649257303.552845,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-1499962.pt"
+                ]
+            },
+            {
+                "steps": 1500026,
+                "file_path": "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-1500026.onnx",
+                "reward": 8.720833736898689,
+                "creation_time": 1649257303.859615,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-1500026.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1500026,
+            "file_path": "results\\RnnZombiesTreasures01\\SeekTreasure.onnx",
+            "reward": 8.720833736898689,
+            "creation_time": 1649257303.859615,
+            "auxillary_file_paths": [
+                "results\\RnnZombiesTreasures01\\SeekTreasure\\SeekTreasure-1500026.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.11.0+cu113"
+    }
+}

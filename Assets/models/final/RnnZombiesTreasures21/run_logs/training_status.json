@@ -1,0 +1,89 @@
+{
+    "zombiesspeed": {
+        "lesson_num": 3
+    },
+    "zombieschasingtime": {
+        "lesson_num": 3
+    },
+    "zombieswanderingtime": {
+        "lesson_num": 3
+    },
+    "zombiescount": {
+        "lesson_num": 3
+    },
+    "mazeactivewalls": {
+        "lesson_num": 3
+    },
+    "agentbulletmagsize": {
+        "lesson_num": 3
+    },
+    "agentdamagepershot": {
+        "lesson_num": 3
+    },
+    "agentnotshootingcountdown": {
+        "lesson_num": 3
+    },
+    "SeekTreasure": {
+        "checkpoints": [
+            {
+                "steps": 3499941,
+                "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-3499941.onnx",
+                "reward": 7.537500120699406,
+                "creation_time": 1649710662.1914551,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-3499941.pt"
+                ]
+            },
+            {
+                "steps": 3999995,
+                "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-3999995.onnx",
+                "reward": 5.257000220318635,
+                "creation_time": 1649711299.0672722,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-3999995.pt"
+                ]
+            },
+            {
+                "steps": 4499981,
+                "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-4499981.onnx",
+                "reward": 6.791625140001997,
+                "creation_time": 1649711935.8509483,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-4499981.pt"
+                ]
+            },
+            {
+                "steps": 4999990,
+                "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-4999990.onnx",
+                "reward": 6.955400197207927,
+                "creation_time": 1649712577.7285402,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-4999990.pt"
+                ]
+            },
+            {
+                "steps": 5000054,
+                "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-5000054.onnx",
+                "reward": 6.955400197207927,
+                "creation_time": 1649712577.994942,
+                "auxillary_file_paths": [
+                    "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-5000054.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5000054,
+            "file_path": "results\\RnnZombiesTreasures21\\SeekTreasure.onnx",
+            "reward": 6.955400197207927,
+            "creation_time": 1649712577.994942,
+            "auxillary_file_paths": [
+                "results\\RnnZombiesTreasures21\\SeekTreasure\\SeekTreasure-5000054.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.11.0+cu113"
+    }
+}
